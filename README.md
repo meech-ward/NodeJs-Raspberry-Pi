@@ -11,8 +11,6 @@ This is a simple shell script that will install NodeJs v10.x.  The "Latest versi
 
 ```sh
 wget -O - https://raw.githubusercontent.com/meech-ward/NodeJs-Raspberry-Pi/master/Install-Node.sh | sudo bash
-node -v
-exit
 ```
 <p>
 
