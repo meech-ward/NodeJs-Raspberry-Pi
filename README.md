@@ -5,14 +5,18 @@
 
 ## Latest NodeJS Install
 
-This is a simple shell script that will install NodeJs v10.x.  The "Latest version" of NodeJs version of 10.x in the raspberry pi on every version of raspberry pis (zero|1|2|3) This also happens to work on a Beaglebone and other ARM6 or ARM7 linux computers.<p>
+This is a simple shell script that will install NodeJs v11.x.  The "Latest version" of NodeJs version of 11.x in the raspberry pi on every version of raspberry pis (zero|1|2|3) This also happens to work on a Beaglebone, Nvidia TX2, and other ARM6, ARM7, and ARM64 linux computers.
 
->First, you will need to install the latest version of NodeJs on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: <p>
+>First, you will need to install the latest version of NodeJs on your pi by going into you Raspberry Pi zero|1|2|3's terminal, and running: 
 
 ```sh
 wget -O - https://raw.githubusercontent.com/meech-ward/NodeJs-Raspberry-Pi/master/Install-Node.sh | sudo bash
+node -v
+# if you get an error that node did not install, it is because currently there is no ARM6l build for node 12
+# (this only really effects the pi zero, and pi-1), but the node-install utility is there, so you can just sudo node-install -v 11
+# for the time being
 ```
-<p>
+
 
 ## Specific Version of NodeJs
 
@@ -67,7 +71,16 @@ or
 ```sh
 sudo node-install -v 11;
 # then you will get prompted with which 
-# specific version of 10 you wish to install
+# specific version of 11 you wish to install
+```
+
+or
+```sh
+sudo node-install -v 12;
+# then you will get prompted with which 
+# specific version of 12 you wish to install
+# there is currently no build for the ARM6l, so you will have to
+# sudo node-install -v 11; # until they have an ARM6 build (only effects pi zeros, and pi1 models)
 ```
 
 Please note that this will work for **EVERY raspberry pi**.
