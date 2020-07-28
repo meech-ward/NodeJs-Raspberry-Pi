@@ -8,13 +8,9 @@ then
 else 
         cd /bin/;
         rm node-install;
-        wget https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/node-install;
+        wget "https://raw.githubusercontent.com/audstanley/NodeJs-Raspberry-Pi/master/build/node-install-"$PICHIP;
+        mv node-install-$PICHIP node-install
         chmod +x node-install;
+        /bin/node-install -a;
 
-        if [ $PICHIP = "armv6l" ] 
-        then 
-                /bin/node-install -v 11; 
-        else 
-                /bin/node-install -a;
-        fi # because there is no ARM6 build for version 12.
 fi
